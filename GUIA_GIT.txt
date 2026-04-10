@@ -1,0 +1,121 @@
+===========================================================================
+  GUÍA GIT — dew-point-k660
+  Sistema de Análisis Predictivo K-660 | Planta Dew Point Percheles
+===========================================================================
+
+PASO 0 — ESTRUCTURA FINAL DE CARPETAS ANTES DE SUBIR
+---------------------------------------------------------------------------
+Copiar / mover los archivos a esta estructura:
+
+  dew_point_k660\
+  ├── dew_point_analisis_completo.py
+  ├── app.py                          ← (pendiente — se desarrolla aparte)
+  ├── requirements.txt                ← generado en esta sesión
+  ├── README.md                       ← generado en esta sesión
+  ├── .gitignore                      ← generado en esta sesión
+  ├── data\
+  │   └── dew_point_clean.csv         ← copiar desde salida_proyecto\
+  └── outputs\
+      ├── index.html
+      └── reporte_k660_dew_point.pdf
+
+
+PASO 1 — CREAR EL REPOSITORIO EN GITHUB
+---------------------------------------------------------------------------
+1. Ir a https://github.com/new
+2. Nombre del repositorio : dew-point-k660
+3. Descripción            : Sistema de análisis predictivo y detección de
+                            anomalías para el compresor K-660 - Planta
+                            Dew Point Percheles, Bolivia
+4. Visibilidad            : Public (para Streamlit Cloud gratuito)
+                            o Private si prefieres
+5. NO marcar "Add README" ni ".gitignore" (ya los tenemos)
+6. Clic en "Create repository"
+7. Copiar la URL del repositorio:
+   https://github.com/TU_USUARIO/dew-point-k660.git
+
+
+PASO 2 — CONFIGURAR GIT (solo la primera vez)
+---------------------------------------------------------------------------
+  git config --global user.name  "Herland Melgar"
+  git config --global user.email "tu_email@ejemplo.com"
+
+
+PASO 3 — INICIALIZAR REPOSITORIO LOCAL
+---------------------------------------------------------------------------
+  cd C:\Users\herla\Desktop\Python\Code\Proyecto Python\dew_point_k660
+
+  git init
+  git add .
+  git status                      ← verificar qué archivos se van a subir
+
+
+PASO 4 — PRIMER COMMIT
+---------------------------------------------------------------------------
+  git commit -m "feat: sistema analisis predictivo K-660 Dew Point Percheles
+
+  - 8 niveles de análisis: ingesta, temporal, drivers, anomalías, GRU
+  - Modelos GRU con MAPE < 1% para PT_664 y TE_664
+  - Detección de 178 eventos anómalos (Z-Score dinámico, ventana 60 min)
+  - Reporte PDF y HTML autocontenido
+  - 44,640 registros, 31 días continuos de operación"
+
+
+PASO 5 — CONECTAR CON GITHUB Y SUBIR
+---------------------------------------------------------------------------
+  git remote add origin https://github.com/TU_USUARIO/dew-point-k660.git
+  git branch -M main
+  git push -u origin main
+
+  → GitHub pedirá credenciales la primera vez.
+    Recomendado: usar un Personal Access Token (PAT) en lugar de contraseña.
+    Crear en: https://github.com/settings/tokens → "Generate new token (classic)"
+    Permisos necesarios: repo (todo el bloque)
+
+
+PASO 6 — VERIFICAR
+---------------------------------------------------------------------------
+  Ir a https://github.com/TU_USUARIO/dew-point-k660
+  Confirmar que aparecen:
+    ✅ README.md renderizado con tablas y badges
+    ✅ dew_point_analisis_completo.py
+    ✅ requirements.txt
+    ✅ .gitignore
+    ✅ Carpeta data/ con dew_point_clean.csv
+    ✅ Carpeta outputs/ con index.html y PDF
+
+
+COMANDOS DE USO DIARIO (referencia rápida)
+---------------------------------------------------------------------------
+  git status                        ← ver cambios pendientes
+  git add .                         ← agregar todos los cambios
+  git add archivo_especifico.py     ← agregar un archivo específico
+  git commit -m "descripcion"       ← guardar snapshot
+  git push                          ← sincronizar con GitHub
+  git log --oneline                 ← historial de commits
+  git diff                          ← ver qué cambió exactamente
+
+
+CONVENCIÓN DE MENSAJES DE COMMIT (recomendada)
+---------------------------------------------------------------------------
+  feat:     nueva funcionalidad
+  fix:      corrección de bug
+  docs:     cambios en documentación
+  refactor: mejora de código sin cambiar funcionalidad
+  data:     actualización de datos o dataset
+
+  Ejemplos:
+    git commit -m "feat: agregar dashboard Streamlit app.py"
+    git commit -m "fix: corregir ruta CARPETA_SALIDA en Windows"
+    git commit -m "docs: actualizar README con métricas GRU finales"
+    git commit -m "data: actualizar dew_point_clean.csv con datos abril"
+
+
+PRÓXIMOS PASOS DESPUÉS DE GITHUB
+---------------------------------------------------------------------------
+  1. Desarrollar app.py (dashboard Streamlit)
+  2. Conectar Streamlit Cloud al repositorio → deploy automático
+  3. Conectar Render.com al repositorio → publicar outputs/index.html
+  4. Cada git push actualiza automáticamente ambos servicios
+
+===========================================================================
