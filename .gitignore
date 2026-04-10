@@ -1,0 +1,67 @@
+# ============================================================
+# .gitignore — dew-point-k660
+# ============================================================
+
+# ---------- Datos raw (NO subir al repositorio) ----------
+*.xlsx
+*.xls
+data/*.csv          # Solo subir dew_point_clean.csv si es necesario
+                    # Descomentar la siguiente línea para excluir TODO csv:
+# *.csv
+
+# ---------- Outputs generados (reproducibles) ----------
+outputs/*.png
+outputs/*.pdf
+# outputs/index.html   # Descomentar si no quieres subir el HTML
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ---------- Entornos virtuales ----------
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# ---------- Variables de entorno / secretos ----------
+.env
+.env.local
+*.secret
+
+# ---------- IDEs ----------
+.vscode/
+.idea/
+*.spyderproject
+*.spyproject
+.spyder-py3/
+*.sublime-project
+*.sublime-workspace
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+*.ipynb
+
+# ---------- TensorFlow / Keras ----------
+*.h5
+*.keras
+saved_model/
+checkpoints/
+logs/
+
+# ---------- Sistema operativo ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+
+# ---------- Streamlit ----------
+.streamlit/secrets.toml
